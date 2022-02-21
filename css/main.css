@@ -9,10 +9,135 @@ h1 {
     padding: 1rem;
 }
 p {
-    border: 2px solid #cab;
-    background: #def;
-    text-align: center;
     padding: 1rem;
     margin: 1rem;
     border-radius: 20px;
 }
+
+
+/*When User finishes a step and clicks on the button, trigger an animation that points to the next step */
+/*First, point to the first step */
+
+
+
+
+
+
+/* Log the event object to the browser's js console */
+
+/* Another animation triggered by a mouse event (not hover) */
+
+/*Display the position details of the mouse as it moves */
+html, body {
+  width: 100%;
+  height:100%;
+  padding:0;
+  box-sizing: border-box;
+}
+
+.mouse-posn {
+  width: 50%;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: rgba(173, 38, 151, 0.5)
+}
+
+
+
+
+
+/* Client X:Y setup */
+
+body {
+    margin:0;
+    height:100vh;
+}
+
+.ball {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: #c00;
+    opacity: 0;
+    transition: transform 1s;
+}
+
+
+
+/* click position setup 
+html, body {
+    width: 100%;
+    height:100%;
+    padding:0;
+    box-sizing: border-box;
+  }
+  .demo {
+    width: 50%;
+    height:50%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: hsla(90, 50%, 50%, .5)
+  }
+  .demo2 {
+    width: 50%;
+    height:50%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(173, 38, 151, 0.5)
+  }
+*/
+
+
+  /* triangle right shape */
+  #triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 100px solid red;
+    border-bottom: 50px solid transparent;
+  }
+
+  /* star-five demo */
+  #star-five {
+    margin: 50px 0;
+    position: relative;
+    display: block;
+    color: red;
+    width: 0px;
+    height: 0px;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid red;
+    border-left: 100px solid transparent;
+    transform: rotate(35deg);
+  }
+  
+  #star-five:before {
+    border-bottom: 80px solid red;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -45px;
+    left: -65px;
+    display: block;
+    content: '';
+    transform: rotate(-35deg)
+  }
+  #star-five:after {
+    position: absolute;
+    display: block;
+    color: red;
+    top: 3px;
+    left: -105px;
+    width: 0px;
+    height: 0px;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid red;
+    border-left: 100px solid transparent;
+    transform: rotate(-70deg);
+    content: '';
+  }
+  #star-five:hover {
+transform: scale(1.5) skewX(-20deg) translateX(15px);
+  }
