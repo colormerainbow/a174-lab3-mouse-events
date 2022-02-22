@@ -20,7 +20,10 @@ p {
 #starthere {
   text-align: center;
   font-weight: bold;
-  margin-left: 15%;
+  background-color: palegoldenrod;
+  padding: 1rem;
+  margin: .5rem 6rem;
+  border-radius: 40%;
 }
 
 ul {

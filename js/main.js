@@ -41,7 +41,6 @@ const mover = e => {
         steps[current].addEventListener('click', mover, false);
         start.innerText = "Click on the next Step to continue";
     } else {
-        // another animation triggered by mouse event
         start.innerText = "Congratulations on making perfect pancakes!";
         next.style.opacity = 0;
         steps[current - 1].style.backgroundColor = "green";
@@ -53,6 +52,15 @@ const mover = e => {
 
 steps[current].addEventListener('click', mover, false);
 
+ /* another animation triggered by mouse event */
+ const mouseMsg = document.querySelector('.mouse-msg');
+
+ mouseMsg.addEventListener('mouseenter', (e) => {
+    mouseMsg.style.backgroundColor="gray";
+});
+mouseMsg.addEventListener('mouseleave', (e) => {
+    mouseMsg.style.backgroundColor="pink";
+});
 
 /*Display the position details of the mouse as it moves */
 const mousePosn = document.querySelector('.mouse-posn');
