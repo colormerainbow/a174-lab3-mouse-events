@@ -52,14 +52,14 @@ const mover = e => {
 
 steps[current].addEventListener('click', mover, false);
 
- /* another animation triggered by mouse event */
- const mouseMsg = document.querySelector('.mouse-msg');
+/* another animation triggered by mouse event */
+const mouseMsg = document.querySelector('.mouse-msg');
 
- mouseMsg.addEventListener('mouseenter', (e) => {
-    mouseMsg.style.backgroundColor="gray";
+mouseMsg.addEventListener('mouseenter', (e) => {
+    mouseMsg.style.backgroundColor = "gray";
 });
 mouseMsg.addEventListener('mouseleave', (e) => {
-    mouseMsg.style.backgroundColor="pink";
+    mouseMsg.style.backgroundColor = "pink";
 });
 
 /*Display the position details of the mouse as it moves */
