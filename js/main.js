@@ -31,7 +31,7 @@ const mover = e => {
 
     // make the previous step green to indicate it is completed.
     if (current > 0) {
-        steps[current - 1].style.backgroundColor = "green";
+        steps[current - 1].style.backgroundColor = "darkgreen";
     }
     //increment the step to the next step
     current += 1;
@@ -40,10 +40,11 @@ const mover = e => {
     if (current < steps.length) {
         steps[current].addEventListener('click', mover, false);
         start.innerText = "Click on the next Step to continue";
+        start.style.backgroundColor = "darkgreen";
     } else {
         start.innerText = "Congratulations on making perfect pancakes!";
         next.style.opacity = 0;
-        steps[current - 1].style.backgroundColor = "green";
+        steps[current - 1].style.backgroundColor = "darkgreen";
         start.style.transform = "scale(1.5)";
         console.log("Now eat your pancakes!");
     }
@@ -56,10 +57,10 @@ steps[current].addEventListener('click', mover, false);
 const mouseMsg = document.querySelector('.mouse-msg');
 
 mouseMsg.addEventListener('mouseenter', (e) => {
-    mouseMsg.style.backgroundColor = "gray";
+    mouseMsg.style.backgroundColor = "lightgray";
 });
 mouseMsg.addEventListener('mouseleave', (e) => {
-    mouseMsg.style.backgroundColor = "pink";
+    mouseMsg.style.backgroundColor = "salmon";
 });
 
 /*Display the position details of the mouse as it moves */
