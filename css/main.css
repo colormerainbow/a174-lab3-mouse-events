@@ -1,143 +1,73 @@
 * {
-    box-sizing: border-box;
-}
-body {
-    background: #bac;
-}
-h1 {
-    text-align: center;
-    padding: 1rem;
-}
-p {
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 20px;
-}
-
-
-/*When User finishes a step and clicks on the button, trigger an animation that points to the next step */
-/*First, point to the first step */
-
-
-
-
-
-
-/* Log the event object to the browser's js console */
-
-/* Another animation triggered by a mouse event (not hover) */
-
-/*Display the position details of the mouse as it moves */
-html, body {
-  width: 100%;
-  height:100%;
-  padding:0;
   box-sizing: border-box;
 }
 
-.mouse-posn {
-  width: 50%;
-  margin: 2rem auto;
-  padding: 1rem;
+body {
   background: rgba(173, 38, 151, 0.5)
 }
 
-
-
-
-
-/* Client X:Y setup */
-
-body {
-    margin:0;
-    height:100vh;
+h1,
+h2 {
+  text-align: center;
+  padding: 1rem;
 }
 
-.ball {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    background: #c00;
-    opacity: 0;
-    transition: transform 1s;
+p {
+  padding: 1rem;
+  margin: 1rem;
 }
 
+#starthere {
+  text-align: center;
+  font-weight: bold;
+  margin-left: 15%;
+}
 
+ul {
+  margin-left: 10rem;
+}
 
-/* click position setup 
-html, body {
-    width: 100%;
-    height:100%;
-    padding:0;
-    box-sizing: border-box;
-  }
-  .demo {
-    width: 50%;
-    height:50%;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: hsla(90, 50%, 50%, .5)
-  }
-  .demo2 {
-    width: 50%;
-    height:50%;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: rgba(173, 38, 151, 0.5)
-  }
-*/
+button {
+  background-color: palegoldenrod;
+  font-weight: bold;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  border-radius: 30%;
+  padding: 1rem;
+}
 
+.step-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
 
-  /* triangle right shape */
-  #triangle-right {
-    width: 0;
-    height: 0;
-    border-top: 50px solid transparent;
-    border-left: 100px solid red;
-    border-bottom: 50px solid transparent;
-  }
+/* setup an arrow pointer */
+.arrow {
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-left: 50px solid green;
+  border-bottom: 25px solid transparent;
+  opacity: 0;
+  transition: transform 1s;
+}
 
-  /* star-five demo */
-  #star-five {
-    margin: 50px 0;
-    position: relative;
-    display: block;
-    color: red;
-    width: 0px;
-    height: 0px;
-    border-right: 100px solid transparent;
-    border-bottom: 70px solid red;
-    border-left: 100px solid transparent;
-    transform: rotate(35deg);
-  }
-  
-  #star-five:before {
-    border-bottom: 80px solid red;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    position: absolute;
-    height: 0;
-    width: 0;
-    top: -45px;
-    left: -65px;
-    display: block;
-    content: '';
-    transform: rotate(-35deg)
-  }
-  #star-five:after {
-    position: absolute;
-    display: block;
-    color: red;
-    top: 3px;
-    left: -105px;
-    width: 0px;
-    height: 0px;
-    border-right: 100px solid transparent;
-    border-bottom: 70px solid red;
-    border-left: 100px solid transparent;
-    transform: rotate(-70deg);
-    content: '';
-  }
-  #star-five:hover {
-transform: scale(1.5) skewX(-20deg) translateX(15px);
-  }
+/*Setup a display window to show the position details of the mouse as it moves */
+
+.mouse-posn {
+  width: 100%;
+  height: 100%;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #bac;
+}
+
+.mouse-msg {
+  border: solid 2px black;
+  background-color: #def;
+  text-align: center;
+  padding: 1rem;
+  margin: 5rem;
+}

@@ -1,67 +1,61 @@
-/* Client X:Y setup 
+/*When User clicks on the button for the step, trigger an animation that points to it as a placeholder */
 
-var dot = document.getElementById('dot');
-document.body.addEventListener('click', (e) => {
-    dot.style.transform = `translateY(${e.clientY - 25}px)`;
-    dot.style.transform += `translateX(${e.clientX - 25}px)`;
-    dot.style.opacity = 1;
-}, false);
-*/
 
-/* click position setup 
 //create shortcut constants
-const demo  = document.querySelector('.demo');
-const point = document.querySelector('#point');
+let start = document.getElementById('starthere')
+let step1 = document.getElementById('step1');
+let step2 = document.getElementById('step2');
+let step3 = document.getElementById('step3');
+let step4 = document.getElementById('step4');
+let step5 = document.getElementById('step5');
 
-//detect mousedown events and handle them.
-demo.addEventListener('mousedown', (e) => {
-    point.innerHTML = e.offsetX + ', ' + e.offsetY;
-    
-    //open the JS console to see the output
-    console.log("Client: " , e.clientX , e.clientY)
-    console.log("Page: " , e.pageX , e.pageY)
-    console.log("Screen: " , e.screenX , e.screenY)
-    console.log("Event Object: ", e);
-});
-const demo2  = document.querySelector('.demo2');
-const follow = document.querySelector('#follow');
+const steps = [step1, step2, step3, step4, step5];
+let current = 0;
 
-detect mousedown events and handle them.
-demo2.addEventListener('mousedown', (e) => {
-    follow.innerHTML = e.offsetX + ', ' + e.offsetY;
-    
-    //open the JS console to see the output
-    console.log("Client: " , e.clientX , e.clientY)
-    console.log("Page: " , e.pageX , e.pageY)
-    console.log("Screen: " , e.screenX , e.screenY)
-    console.log("Event Object: ", e);
-});
+let next = document.getElementById('next');
 
-demo2.addEventListener('pointermove', (e) => {
-    follow.innerHTML = e.offsetX + ', ' + e.offsetY;
-    
-    //open the JS console to see the output
-    console.log("Client: " , e.clientX , e.clientY)
-    console.log("Page: " , e.pageX , e.pageY)
-    console.log("Screen: " , e.screenX , e.screenY)
-    console.log("Event Object: ", e);
-});
-*/
+/*Iterative handler for subsequent click  events to move the pointer to the next step. */
+const mover = e => {
+    next.style.transform = `translateY(${e.target.offsetTop - 40}px)`;
+    next.style.transform += `translateX(${e.target.offsetLeft - 60}px)`;
 
-/*When User finishes a step and clicks on the button, trigger an animation that points to the next step */
-/*First, point to the first step */
+    next.style.opacity = 1;
 
+    /* Log the event object to the browser's js console */
+    console.log(e);
+    console.log("Position of button clicked (top, left):", e.target.offsetTop, e.target.offsetLeft);
+    console.log(`User clicked on Step ${current+1}`);
 
+    /* Prevent incorrect clicks from messing up the progression */
+    steps[current].removeEventListener('click', mover);
 
+    // make the previous step green to indicate it is completed.
+    if (current > 0) {
+        steps[current - 1].style.backgroundColor = "green";
+    }
+    //increment the step to the next step
+    current += 1;
 
+    //check to see where we are and stop when approach the last step 
+    if (current < steps.length) {
+        steps[current].addEventListener('click', mover, false);
+        start.innerText = "Click on the next Step to continue";
+    } else {
+        // another animation triggered by mouse event
+        start.innerText = "Congratulations on making perfect pancakes!";
+        next.style.opacity = 0;
+        steps[current - 1].style.backgroundColor = "green";
+        start.style.transform = "scale(1.5)";
+        console.log("Now eat your pancakes!");
+    }
+}
+/* Trigger an animation based on user mouse clicks - detect the first click event and handle it */
 
+steps[current].addEventListener('click', mover, false);
 
-/* Log the event object to the browser's js console */
-
-/* Another animation triggered by a mouse event (not hover) */
 
 /*Display the position details of the mouse as it moves */
-const mousePosn  = document.querySelector('.mouse-posn');
+const mousePosn = document.querySelector('.mouse-posn');
 const follow = document.querySelector('#follow');
 
 mousePosn.addEventListener('pointermove', (e) => {

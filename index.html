@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,44 +9,41 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/main.js" defer></script>
 </head>
+
 <body>
-    <h1>Simply the Best Fluffy Pancakes</h1>
-    <h2>Step-by-Step to Perfect Pancakes</h2>
-    <h3>Click the button to check off after completing each step:</h3>
-    <p><button id="step1">Step1</button>Mix Dry Ingredients in a Bowl</p>
-    <ul>
-        <li>Flour</li>
-        <li>Sugar</li>
-        <li>Baking Soda</li>
-        <li>Salt</li>
-    </ul>
-    <p><button id="step2">Step2</button>Mix Dry Ingredients in a Bowl</p>
-    <p><button id="step3">Step3</button>Mix Dry Ingredients in a Bowl</p>
-    <p><button id="step4">Step4</button>Mix Dry Ingredients in a Bowl</p>
-    <p><button id="Step5">Step5</button>Mix Dry Ingredients in a Bowl</p>
+    <div class="mouse-posn">
+        <div id="next" class="arrow"></div>
+        <h1>Simply the Best Fluffy Pancakes</h1>
+        <h2>Step-by-Step to Perfect Pancakes</h2>
 
-<!--for star shape 
-<div class="demo-star" id="star-five">
-    <h2>Super!</h2>
-</div>
--->
-      <!-- ClientX:Y setup-->
-    <div id="dot" class="ball"></div>
-    <p>Click anywhere</p>
+        <h3 id="starthere">Click on Step 1 to get started</h3>
+        <p><button id="step1" class="instr">Step 1</button>Mix Dry Ingredients in a Bowl</p>
+        <ul>
+            <li>2 cups All Purpose Flour</li>
+            <li>1/4 cup Sugar</li>
+            <li>4 tsp Baking Powder</li>
+            <li>1/4 tsp Baking Soda</li>
+            <li>1/2 tsp Salt</li>
+        </ul>
+        <p><button id="step2" class="instr">Step 2</button>Mix Wet Ingredients in a Separate Bowl</p>
+        <ul>
+            <li>1 3/4 cups Milk</li>
+            <li>1/4 cup Butter</li>
+            <li>2 tsp Vanilla Extract</li>
+            <li>1 Large Egg</li>
+        </ul>
+        <p><button id="step3" class="instr">Step 3</button>Whisk the wet ingredients into the dry until smooth. Let
+            batter rest while you heat up the pan.</p>
+        <p><button id="step4" class="instr">Step 4</button>Pour 1/4 cup of batter onto the pan. Flip when the underside
+            is golden and cook until golden.</p>
+        <p><button id="step5" class="instr">Step 5</button>Enjoy with warm maple syrup!</p>
 
-<!-- click position setup
-
-<div class="demo">
-    <h2>Where Did I Click?</h2>
-    <h3 id="point">0, 0</h3>
-    <p>Check the console for more info</p>
-</div>
--->
-<div class="mouse-posn">
-    <h2>Where is my mouse?</h2>
-    <h3 id="follow">0, 0</h3>
-    <p>Displays the position of the mouse as it moves</p>
-</div>
+        <div class="mouse-msg">
+            <h2>Where is my mouse?</h2>
+            <h3 id="follow">0, 0</h3>
+            <p>Displays the position of the mouse as it moves</p>
+        </div>
 
 </body>
+
 </html>
